@@ -1,0 +1,110 @@
+:root {
+  --trial-purple: #6d3bb8;
+  --trial-purple-dark: #4f278d;
+  --trial-bg: #f3edff;
+}
+
+.trial-banner {
+  position: relative;
+  margin: -4px 0 18px;
+  padding: 14px 18px;
+  border: 1px solid #cdb8ee;
+  border-left: 5px solid var(--trial-purple);
+  border-radius: 14px;
+  background: var(--trial-bg);
+  color: #35204f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.trial-banner strong {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+
+.trial-banner span {
+  font-size: 0.8rem;
+}
+
+.trial-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  background: var(--trial-purple);
+  color: #fff;
+  padding: 7px 13px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.tab-btn.trial-locked,
+button.trial-locked {
+  opacity: 0.55;
+  cursor: not-allowed !important;
+  filter: grayscale(0.25);
+}
+
+.tab-btn.trial-locked::after {
+  content: "  🔒";
+  font-size: 0.75rem;
+}
+
+.trial-disabled-note {
+  color: #5e3a85;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+#trialDialog {
+  max-width: 520px;
+  width: calc(100% - 32px);
+  border: 0;
+  border-radius: 20px;
+  padding: 0;
+  box-shadow: 0 24px 70px rgba(25, 11, 48, 0.35);
+}
+
+#trialDialog::backdrop {
+  background: rgba(16, 24, 40, 0.58);
+}
+
+.trial-dialog-body {
+  padding: 26px;
+  color: #25364a;
+}
+
+.trial-dialog-body h2 {
+  margin: 0 0 10px;
+  color: var(--trial-purple-dark);
+}
+
+.trial-dialog-body p {
+  line-height: 1.5;
+}
+
+.trial-dialog-body button {
+  border: 0;
+  border-radius: 999px;
+  background: var(--trial-purple);
+  color: white;
+  padding: 10px 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media print {
+  body::before {
+    content: "Printing is disabled in the VivaTEQ public trial demo.";
+    display: block;
+    padding: 24px;
+    font-size: 18px;
+  }
+  .container {
+    display: none !important;
+  }
+}
